@@ -1,21 +1,22 @@
-class Person: 
-  def __init__(self, name, favorite_drink, my_order):
+#Challenge 1
+class Person:
+  def __init__(self, name, favorite_drink):
     self.name = name
     self.favorite_drink = favorite_drink
-    #self.my_order = 
 
-    #def my_order(self):
+  #Challenge 3
+  def my_order(self):
+    return Order(self.favorite_drink, self)
 
-class Order: 
+#Challenge 2
+class Order:
   def __init__(self, drink_type, person):
-    self.type = drink_type
+    self.drink_type = drink_type
     self.person = person
 
-    def to_string(self):
-      print(f"{self.person.name} ordered: {self.drink_type}")
-
+  def to_string(self):
+    return f"{self.person.name} ordered: {self.drink_type}"
 
 person1 = Person("Tay", "sugar cookie latte")
 order1 = person1.my_order()
-
 print(order1.to_string())
